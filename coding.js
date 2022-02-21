@@ -7,6 +7,7 @@ function addToZero(numbers){
         } else return false
     }
 }
+//The runtime for addToZero would be about O(n), since we're running a single for-loop
 
 function hasUniqueChars(str){
     let charCount = {}
@@ -16,10 +17,13 @@ function hasUniqueChars(str){
         }else return true
     }
 }
+//The runtime for hasUniqueChars would have to be equal O(n) due to the for-loop and the if-else is not calling any other functions within itself
 
 function isPangram(string){
-let regex = /(a-z])(?!.*)
+let regex = /(a-z])(?!.*\1)/gi
+return (string.match(regex)).length === 26
 }
+//Runtime for isPangram would be O(n)
 
 function findLongestWord(str){
     let words = str.split(' ');
@@ -32,3 +36,4 @@ function findLongestWord(str){
     }
     return maxLength;
 }
+//The runtime for findLongestWord would be O(n) 
